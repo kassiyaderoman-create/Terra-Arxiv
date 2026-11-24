@@ -1,0 +1,12 @@
+{
+  "name": "terra-arxivi",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "format": "prettier --write dist/*.html dist/css/*.css dist/js/*.mjs dist/terra.js tests/*.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2"
+  }
+}

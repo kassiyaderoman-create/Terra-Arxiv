@@ -1,0 +1,284 @@
+.progress-track {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 7px;
+  background: #343944;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.progress-track progress {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+}
+.progress-track i {
+  display: block;
+  height: 100%;
+  width: var(--watched, 0%);
+  background: var(--red);
+}
+.season-done .progress-track i {
+  background: #79d8ac;
+}
+.cell {
+  position: relative;
+}
+.battle-move-effect,
+.battle-heal-effect {
+  position: absolute;
+  inset: 25% 0 auto;
+  z-index: 2;
+  text-align: center;
+  pointer-events: none;
+  font-weight: 900;
+}
+.battle-move-effect {
+  color: #ff997f;
+}
+.battle-heal-effect {
+  color: #a4ffd2;
+  text-shadow: 0 0 8px #198758;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
+    overflow: hidden;
+  }
+  .hero::before {
+    animation: hero-art-in 850ms ease-out both;
+  }
+  .hero-content {
+    animation: panel-in 560ms ease-out both;
+  }
+  .hero-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      #bcdeff26 49%,
+      transparent 63%
+    );
+    animation: hero-sweep 1000ms 160ms ease-out both;
+  }
+  .portrait-button img {
+    transition:
+      transform 220ms ease-out,
+      filter 220ms ease-out;
+  }
+  .card {
+    transition:
+      box-shadow 200ms ease-out,
+      border-color 200ms ease-out;
+  }
+  #details[open] {
+    animation: panel-in 240ms ease-out both;
+  }
+  .progress-track i {
+    transition:
+      width 340ms ease-out,
+      background-color 240ms ease-out;
+  }
+  .anime-reward[open] .reward-badge {
+    animation: reward-glow 850ms 180ms ease-out both;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    border-color: var(--accent, #8cadda);
+    box-shadow: 0 7px 25px
+      color-mix(in srgb, var(--accent, #8cadda) 25%, transparent);
+  }
+  .portrait-button:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hero-art-in {
+  from {
+    opacity: 0.4;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-sweep {
+  from {
+    opacity: 0;
+    transform: translateX(-80%);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(80%);
+  }
+}
+@keyframes reward-glow {
+  from {
+    box-shadow: 0 0 0 0 #ffc98999;
+  }
+  to {
+    box-shadow: 0 0 0 16px #ffc98900;
+  }
+}
+
+.team-flight {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  border: 1px solid #ffab8c;
+  border-radius: 7px;
+  width: 64px;
+  height: 80px;
+  object-fit: contain;
+  background: #192535;
+  pointer-events: none;
+}
+.enemy-health {
+  position: absolute;
+  inset: auto 15% 10%;
+  height: 4px;
+  border-radius: 2px;
+  background: #111820;
+  overflow: hidden;
+}
+.enemy-health i {
+  display: block;
+  height: 100%;
+  background: #ff8377;
+}
+.battle-damage-effect {
+  position: absolute;
+  inset: 15% 0 auto;
+  pointer-events: none;
+  color: #ffd3a5;
+  text-shadow: 0 1px 5px #520c03;
+  font-weight: 900;
+  z-index: 3;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before {
+    background-position: calc(66% + var(--hero-x, 0px))
+      calc(38% + var(--hero-y, 0px));
+    transition: background-position 150ms ease-out;
+  }
+  .hero-content {
+    translate: calc(var(--hero-x, 0px) * -0.2) calc(var(--hero-y, 0px) * -0.24);
+  }
+  #details[open] .detail-portrait {
+    animation: dossier-left 430ms ease-out both;
+  }
+  #details[open] #detail-stats {
+    animation: dossier-right 490ms 55ms ease-out both;
+  }
+  .map > svg,
+  #atlas-pins {
+    transform-origin: var(--atlas-x, 50%) var(--atlas-y, 50%);
+    transition: scale 440ms ease-out;
+  }
+  #atlas-pins {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  #atlas-pins button {
+    pointer-events: auto;
+  }
+  .map.atlas-zoom > svg,
+  .map.atlas-zoom #atlas-pins {
+    scale: 1.13;
+  }
+  .anime-reward[open]::backdrop {
+    animation: reward-darken 450ms ease-out both;
+  }
+  .anime-reward[open] .reward-badge {
+    position: relative;
+    isolation: isolate;
+    animation: reward-glow 1050ms 220ms ease-out both;
+  }
+  .anime-reward[open] .reward-badge::after {
+    content: "";
+    position: absolute;
+    inset: -32px -24px;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 7% 20%, #ffe58d 2px, transparent 4px),
+      radial-gradient(circle at 21% 4%, #ffaf55 2px, transparent 4px),
+      radial-gradient(circle at 44% 91%, #ffe58d 2px, transparent 4px),
+      radial-gradient(circle at 63% 9%, #ffe58d 3px, transparent 6px),
+      radial-gradient(circle at 91% 35%, #ffaf55 2px, transparent 4px),
+      radial-gradient(circle at 85% 83%, #ffe58d 2px, transparent 4px);
+    animation: reward-particles 950ms 240ms ease-out both;
+  }
+}
+@media (max-width: 560px) and (prefers-reduced-motion: no-preference) {
+  .hero::before {
+    background-position: calc(68% + var(--hero-x, 0px))
+      calc(20% + var(--hero-y, 0px));
+  }
+}
+@keyframes dossier-left {
+  from {
+    opacity: 0.25;
+    translate: -24px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+@keyframes dossier-right {
+  from {
+    opacity: 0.25;
+    translate: 24px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+@keyframes reward-darken {
+  from {
+    backdrop-filter: brightness(1);
+  }
+  to {
+    backdrop-filter: brightness(0.58);
+  }
+}
+@keyframes reward-particles {
+  from {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}

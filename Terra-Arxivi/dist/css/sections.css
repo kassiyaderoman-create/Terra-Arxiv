@@ -1,0 +1,396 @@
+.chapter-title {
+  margin: 32px 0 14px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+.chapter-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 0.85em;
+  margin-right: 10px;
+  background: var(--red);
+}
+#qollanma .guide-lead {
+  background:
+    linear-gradient(100deg, #171e2af5 30%, #25384bc9),
+    url("../hero.webp") center 45% / cover;
+  border-radius: 12px;
+  border-color: #47536b;
+}
+#classes {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+#classes .class-card {
+  min-height: 166px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 9px;
+  background: linear-gradient(105deg, #151d29 45%, #25364b);
+  border-color: #3a4960;
+}
+.class-card img {
+  position: absolute;
+  inset: auto -12px -24px auto;
+  width: 56%;
+  height: 155px;
+  object-fit: contain;
+  object-position: center top;
+  opacity: 0.46;
+  z-index: -1;
+}
+.class-card > div {
+  background: linear-gradient(90deg, #151d29 25%, #151d29cc 65%, transparent);
+}
+.class-card strong {
+  color: #b8dcff;
+  font-size: 1.05rem;
+}
+.class-card p {
+  max-width: 22ch;
+  color: #e1e9f2;
+}
+.region-cards a,
+.region-cards button {
+  border-radius: 9px;
+  overflow: hidden;
+  background: linear-gradient(100deg, #242f40, #151c26);
+  gap: 14px;
+}
+.region-cards img {
+  width: clamp(76px, 9vw, 122px);
+  height: 112px;
+}
+.squad {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.squad li {
+  border-radius: 8px;
+  background: linear-gradient(128deg, #202b3a, #151b24);
+  border-left: 2px solid #85a5cd;
+}
+.squad strong {
+  color: #b8d1f0;
+}
+.trouble-grid details {
+  border-radius: 8px;
+  border-color: #39465a;
+  background: linear-gradient(108deg, #1c2533, #161c25);
+  padding: 0;
+}
+.trouble-grid summary {
+  padding: 13px 15px;
+  min-height: 45px;
+}
+.trouble-grid summary::marker {
+  color: var(--red);
+}
+.trouble-grid details[open] {
+  border-color: #797187;
+}
+.trouble-grid details p {
+  margin: 0;
+  padding: 0 15px 14px;
+}
+#terra {
+  background: radial-gradient(ellipse at 78% 12%, #203c49, #151922 54%);
+}
+.atlas-panel {
+  border-radius: 10px;
+  border-color: #496977;
+  background: linear-gradient(135deg, #142633, #141b27);
+}
+.map {
+  border-radius: 12px;
+  overflow: hidden;
+  border-color: #557984;
+  background:
+    linear-gradient(#0d222bcf, #101b27d9),
+    url("../editorial/terra-city.webp") center/cover;
+}
+.map .pin {
+  border-radius: 6px;
+  background: #152632;
+  box-shadow: 0 5px 15px #0008;
+}
+.map .pin[aria-pressed="true"] {
+  background: #3c282a;
+  border-color: #ff8377;
+  color: #ffd4cb;
+}
+.map small {
+  padding: 3px 6px;
+  background: #111b24;
+  border-radius: 4px;
+}
+.terra-art {
+  border-radius: 11px;
+}
+.encyclopedia .info-grid a {
+  border-radius: 7px;
+  background: linear-gradient(110deg, #203642, #14232e);
+}
+#anime .seasons li {
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1c2434, #151a23);
+}
+#tracker {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+#tracker fieldset {
+  padding: 10px;
+  min-width: 0;
+  border-radius: 10px;
+  background: linear-gradient(155deg, #212b3c, #151c28);
+  border-color: #414e67;
+}
+#tracker legend {
+  font-size: 0.9rem;
+  color: #d9e7fa;
+}
+#tracker .episode {
+  border-radius: 6px;
+  min-height: 44px;
+  padding: 5px 7px;
+}
+#tracker .episode:has(input:checked) {
+  background: #28433c60;
+}
+#tracker .season-done progress {
+  color: #79d8ac;
+}
+#tracker .season-done progress::-webkit-progress-value {
+  background: #79d8ac;
+}
+#tracker .season-done progress::-moz-progress-bar {
+  background: #79d8ac;
+}
+#tracker input {
+  accent-color: #97dfbf;
+  width: 17px;
+  height: 17px;
+  flex: none;
+}
+#watch-status {
+  padding: 10px 13px;
+  background: #202a3a;
+  border-left: 3px solid #94aee0;
+  border-radius: 3px;
+  color: #e2ebfb;
+}
+#anime-timeline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#mashq {
+  background: radial-gradient(ellipse at 20% 60%, #223044, #151922 65%);
+}
+#mashq .lesson {
+  border-radius: 8px;
+  background: #19283a;
+}
+#mashq .board {
+  padding: 8px;
+  border: 1px solid #50677f;
+  border-radius: 9px;
+  background: #0c131e;
+}
+#mashq .cell {
+  border-radius: 5px;
+  background-color: #202d3c;
+}
+#mashq .cell.path {
+  background-color: #463633;
+  border-color: #8a6b59;
+}
+#mashq .cell[data-cell="6"] {
+  background-color: #552c37;
+}
+#mashq .cell[data-cell="11"] {
+  background-color: #1f4754;
+}
+#mashq .cell.lesson-target {
+  outline: 2px solid #ffe0a5;
+  background-color: #665134;
+}
+#mashq .cell.enemy {
+  box-shadow: inset 0 0 0 2px #ff8775;
+}
+.training-panel {
+  border-radius: 9px;
+  background: linear-gradient(150deg, #1d293a, #141b25);
+  border-color: #455873;
+}
+.battle-meter {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  margin: 0 0 14px;
+}
+.battle-meter div {
+  padding: 7px 5px;
+  background: #111b27;
+  border: 1px solid #344a64;
+  border-radius: 6px;
+  text-align: center;
+}
+.battle-meter dt {
+  font-size: clamp(0.66rem, 1.4vw, 0.82rem);
+  color: #bacde7;
+  overflow-wrap: anywhere;
+}
+.battle-meter dd {
+  margin: 0;
+  color: #e0f2ff;
+  font:
+    800 clamp(1rem, 2vw, 1.4rem) ui-monospace,
+    monospace;
+}
+.play-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 0.38fr);
+  gap: 16px;
+  align-items: center;
+  padding: clamp(16px, 4vw, 42px);
+  background:
+    linear-gradient(100deg, #101923f5, #1d263b80),
+    url("../hero.webp") center 58% / cover;
+  border: 1px solid #54627c;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.play-panel img {
+  width: 100%;
+  height: clamp(180px, 26vw, 305px);
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px #000);
+}
+.play-panel h2 {
+  overflow-wrap: anywhere;
+}
+.site-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px 22px;
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 13px;
+}
+.site-footer .footer-author {
+  grid-column: 1/-1;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 800px) {
+  #classes,
+  .squad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #tracker,
+  #anime-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .play-panel,
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+  .play-panel img {
+    grid-row: 1;
+    height: 165px;
+  }
+  .class-card img {
+    opacity: 0.32;
+  }
+  #classes .class-card {
+    padding: 10px;
+  }
+  .battle-meter dt {
+    font-size: 0.68rem;
+  }
+}
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+#tracker .episode.next-episode {
+  grid-column: 1/-1;
+}
+.episode > span {
+  min-width: 0;
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+  .episode-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Terra atlas */
+.atlas-choice {
+  display: block;
+  margin-bottom: 5px;
+  color: #c3dae3;
+  font-weight: 700;
+}
+#atlas-select {
+  width: 100%;
+  min-height: 44px;
+}
+.atlas-art {
+  margin: 12px 0;
+  border: 1px solid #496977;
+  border-radius: 7px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #345569, #101d2a);
+}
+.atlas-art img {
+  width: 100%;
+  height: 154px;
+  display: block;
+  object-fit: cover;
+}
+.atlas-art img.atlas-character {
+  object-fit: contain;
+}
+.atlas-art figcaption {
+  padding: 5px 9px;
+  color: #d1e5f0;
+  background: #101e29;
+  font-size: 0.82rem;
+}
+#atlas-operator:not(:empty) {
+  margin-top: 8px;
+}
+.map .atlas-pin {
+  top: var(--pin-y);
+  left: var(--pin-x);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-weight: 700;
+}
+@media (max-width: 1050px) {
+  .map .atlas-pin:not([aria-pressed="true"]) {
+    width: 18px;
+    height: 18px;
+    min-height: 18px;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    border-radius: 50%;
+    background: #39536a;
+  }
+}
+@media (max-width: 760px) {
+  .map .atlas-pin:not([aria-pressed="true"]) {
+    display: none;
+  }
+}
